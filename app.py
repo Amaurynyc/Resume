@@ -30,14 +30,12 @@ st.sidebar.markdown(linkedin_html, unsafe_allow_html=True)
 st.title("Meet Amaury Desrosiers!")
 st.markdown("**Exploring Amaury's fit for Solution Architect leader at Cohere**")
 
-# Initialize the client with the API key from Streamlit's secrets
-client = anthropic.Anthropic(api_key=st.secrets["my_anthropic_api_key"])
 
 # Example Questions in Grey
 questions_html = """
 <div style='color: grey;'>
 <p>What unique skills does Amaury Desrosiers bring to the role of Solution Architect Manager?</p>
-<p>How has Amaury's background prepared him for managing solution architects at Anthropic?</p>
+<p>How has Amaury's background prepared him for managing solution architects at Cohere?</p>
 <p>Can you share examples of Amaury's past achievements in technology leadership?</p>
 <p>What are Amaury's key strengths in team management and project execution?</p>
 </div>
