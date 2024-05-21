@@ -50,50 +50,28 @@ user_input = st.text_input(" ℹ️ What do you want to know about Amaury?", val
 
 co = cohere.Client(st.secrets["my_cohere_api_key"])
 
-
-
-
 if user_input:
     try:
         # Sending the user message to the model
         response = co.chat(message=user_input)
 
-        # Print the full API response
-        #st.write("Full API Response:")
-        #st.write(response)
+        text=response.text
 
-        # Convert response to a string for regex processing
-        response_str = str(response)
-
-        # Define a regex pattern to more accurately extract the text
-        pattern = r'TextBlock\(text="((?:[^"\\]|\\.)*)'
-
-        # Use regex to find all matches of the pattern
-        matches = re.findall(pattern, response_str)
-
-        # Check if matches were found
-        if matches:
-            extracted_text = " ".join(matches)  # Join all extracted texts
-            # Replace newline characters with HTML tags for formatting
-            extracted_text = extracted_text.replace("\\n\\n", "</p><p>").replace("\\n", "<br>")
-            # Wrap the content in paragraph tags if not already formatted
-            formatted_html = f"<div class='blue-container'><p>{extracted_text}</p></div>"
-
-            # Create and display the blue container with the formatted text
-            st.markdown(
-                f"""
-                <style>
-                .blue-container {{
-                    background-color: #8eb2fa;
-                    border-radius: 10px;
-                    padding: 20px;
-                    margin-bottom: 20px;
-                }}
-                </style>
-                {formatted_html}
-                """,
-                unsafe_allow_html=True
-            )
+       
+        st.markdown(
+            f"""
+            <style>
+            .blue-container {{
+                background-color: #8eb2fa;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }}
+            </style>
+            {text}
+            """,
+            unsafe_allow_html=True
+        )
         else:
             st.error("No text was found in the API response.")
 
