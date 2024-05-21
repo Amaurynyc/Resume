@@ -72,8 +72,6 @@ if user_input:
             """,
             unsafe_allow_html=True
         )
-        else:
-            st.error("No text was found in the API response.")
-
+       
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
