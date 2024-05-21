@@ -8,10 +8,10 @@ st.sidebar.write("""
 ## **amaury@outlook.com**
 """)
 
-st.sidebar.write("Trained with claude-3-haiku-20240307")
+st.sidebar.write("Trained with Cohere Command")
 
 st.sidebar.markdown("""
-[Solution Architect Manager Opening](https://jobs.lever.co/Anthropic/71f3bd8b-2f82-429c-997a-18830b9ca1f1)
+[Solution Architect Director Opening](https://jobs.lever.co/Anthropic/71f3bd8b-2f82-429c-997a-18830b9ca1f1)
 """)
 
 # URL to your LinkedIn profile
@@ -28,7 +28,7 @@ st.sidebar.markdown(linkedin_html, unsafe_allow_html=True)
 
 # Title and Subtitle
 st.title("Meet Amaury Desrosiers!")
-st.markdown("**Exploring Amaury's fit for Solution Architect Manager at Anthropic**")
+st.markdown("**Exploring Amaury's fit for Solution Architect leader at Cohere**")
 
 # Initialize the client with the API key from Streamlit's secrets
 client = anthropic.Anthropic(api_key=st.secrets["my_anthropic_api_key"])
@@ -50,19 +50,15 @@ user_input = st.text_input(" ℹ️ What do you want to know about Amaury?", val
 
 
 
+co = cohere.Client(st.secrets["my_cohere_api_key"])
+
+
+
+
 if user_input:
     try:
         # Sending the user message to the model
-        response = client.messages.create(
-            model="claude-3-haiku-20240307",
-            max_tokens=1000,
-            temperature=0.2,
-            system=st.secrets["secret_message"],
-            messages=[{
-                "content": user_input,
-                "role": "user"
-            }]
-        )
+        response = co.chat(message=user_input)
 
         # Print the full API response
         #st.write("Full API Response:")
