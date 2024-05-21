@@ -1,5 +1,5 @@
 import streamlit as st
-import anthropic
+import cohere
 import re
 
 # Streamlit UI setup
