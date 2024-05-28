@@ -8,7 +8,7 @@ st.sidebar.write("""
 ## **amaury@outlook.com**
 """)
 
-st.sidebar.write("Trained with Cohere Command")
+st.sidebar.write("Trained with Cohere Command-R")
 
 st.sidebar.markdown("""
 [Solution Architect Director Opening](https://jobs.lever.co/cohere/f2b4fa4a-6f45-4582-bba8-a7ddbd74a2ad)
