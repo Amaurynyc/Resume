@@ -57,7 +57,7 @@ if user_input:
         # Sending the user message to the model
         response = co.chat(message= f"{context},{user_input}" )
 
-        st.write(response)
+        st.write(response.text)
 
         text=response.text
         
