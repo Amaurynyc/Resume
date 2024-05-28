@@ -50,10 +50,12 @@ user_input = st.text_input(" ℹ️ What do you want to know about Amaury?", val
 
 co = cohere.Client(st.secrets["my_cohere_api_key"])
 
+context=st.secrets["secret_message"]
+
 if user_input:
     try:
         # Sending the user message to the model
-        response = co.chat(message=user_input)
+        response = co.chat(message= f"{context},{user_input}" )
 
         text=response.text
         
