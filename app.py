@@ -11,7 +11,7 @@ st.sidebar.write("""
 st.sidebar.write("Trained with Cohere Command")
 
 st.sidebar.markdown("""
-[Solution Architect Director Opening](https://jobs.lever.co/Anthropic/71f3bd8b-2f82-429c-997a-18830b9ca1f1)
+[Solution Architect Director Opening](https://jobs.lever.co/cohere/f2b4fa4a-6f45-4582-bba8-a7ddbd74a2ad)
 """)
 
 # URL to your LinkedIn profile
