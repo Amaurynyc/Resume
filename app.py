@@ -56,10 +56,12 @@ if user_input:
     try:
         # Sending the user message to the model
         response = co.chat(
-            message= f"{context},{user_input}",
+            message= f"{context} {user_input}",
             model='command-r',
             temperature=0.3
         )
+
+        st.write(message)
 
         st.write(response.text)
 
