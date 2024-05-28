@@ -61,7 +61,7 @@ if user_input:
             temperature=0.3
         )
 
-        st.write(message)
+        st.write(f"{context} {user_input}")
 
         st.write(response.text)
 
