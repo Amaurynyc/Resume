@@ -58,7 +58,7 @@ if user_input:
         response = co.chat(
             message= f"{context} {user_input}",
             model='command-r',
-            temperature=0.3
+            temperature=0.7
         )
 
         st.write(f"{context} {user_input}")
