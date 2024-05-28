@@ -34,7 +34,7 @@ st.markdown("**Exploring Amaury's fit for Solution Architect leader at Cohere**"
 # Example Questions in Grey
 questions_html = """
 <div style='color: grey;'>
-<p>What unique skills does Amaury Desrosiers bring to the role of Solution Architect Manager?</p>
+<p>What unique skills does Amaury Desrosiers bring to the role of Solution Architect Director?</p>
 <p>How has Amaury's background prepared him for managing solution architects at Cohere?</p>
 <p>Can you share examples of Amaury's past achievements in technology leadership?</p>
 <p>What are Amaury's key strengths in team management and project execution?</p>
@@ -58,20 +58,7 @@ if user_input:
         text=response.text
 
        
-        st.markdown(
-            f"""
-            <style>
-            .blue-container {{
-                background-color: #8eb2fa;
-                border-radius: 10px;
-                padding: 20px;
-                margin-bottom: 20px;
-            }}
-            </style>
-            {text}
-            """,
-            unsafe_allow_html=True
-        )
+        
        
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
