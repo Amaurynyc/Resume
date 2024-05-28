@@ -57,6 +57,8 @@ if user_input:
         # Sending the user message to the model
         response = co.chat(message= f"{context},{user_input}" )
 
+        st.write(response)
+
         text=response.text
         
         st.markdown(
