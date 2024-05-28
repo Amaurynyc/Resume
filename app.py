@@ -55,7 +55,11 @@ context=st.secrets["secret_message"]
 if user_input:
     try:
         # Sending the user message to the model
-        response = co.chat(message= f"{context},{user_input}" )
+        response = co.chat(
+            message= f"{context},{user_input}",
+            model='command-r',
+            temperature=0.3
+        )
 
         st.write(response.text)
 
