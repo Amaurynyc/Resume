@@ -56,7 +56,21 @@ if user_input:
         response = co.chat(message=user_input)
 
         text=response.text
-
+        
+        st.markdown(
+            f"""
+            <style>
+            .blue-container {{
+                background-color: #8eb2fa;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }}
+            </style>
+            {text}
+            """,
+            unsafe_allow_html=True
+        )
        
         
        
